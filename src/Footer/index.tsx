@@ -1,6 +1,6 @@
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router';
 import Button from '../components/Button';
 import Input from '../components/Input';
@@ -8,14 +8,13 @@ import Socials from '../components/Socials';
 import { RoutePaths } from '../constants/routes';
 import { title } from '../constants/strings';
 import useScrollOffset from '../hooks/useScrollOffset';
-import { validateEmail } from '../utils';
 import styles from './styles.module.css';
 import logo from '/logo.svg';
 
 const Footer = () => {
   const scrolled = useScrollOffset(300);
   const [email, setEmail] = useState('');
-  const isValid = useMemo(() => validateEmail(email || ''), [email]);
+  // const isValid = useMemo(() => validateEmail(email || ''), [email]);
 
   return (
     <footer className={styles.footer}>
