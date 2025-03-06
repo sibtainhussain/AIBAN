@@ -1,0 +1,91 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  min-height: 600px;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+
+  @container (max-width: 42rem) {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+}
+
+.waveWrapperGrid {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+
+  @container (max-width: 42rem) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -64px;
+    transform: translateX(-50%);
+  }
+}
+
+.waveLine {
+  flex: 1;
+  border-radius: 100px;
+}
+
+.card {
+  --arrow-left: 14px;
+  --arrow-clip-path: 0;
+  margin-right: auto;
+  margin-left: 0;
+  border: 2px solid var(--border-color-inactive);
+  background-color: var(--background);
+  border-radius: var(--border-radius-1);
+  width: 80%;
+  padding: 16px 32px;
+  position: relative;
+  min-height: 300px;
+  min-width: 200px;
+  width: 80%;
+  margin-bottom: 28px;
+
+  grid-column: 3 / 4;
+
+  @container (max-width: 42rem) {
+    margin-right: 0;
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: -28px;
+    left: var(--arrow-left);
+    height: 28px;
+    width: 28px;
+    background: var(--border-color-inactive);
+    clip-path: polygon(0 0, var(--arrow-clip-path) 100%, 100% 0);
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: -2px;
+      height: 25px;
+      width: 24px;
+      background: var(--background);
+      clip-path: polygon(0 0, var(--arrow-clip-path) 100%, 100% 0);
+    }
+  }
+}
+.flip {
+  @container (min-width: 42rem) {
+    --arrow-left: calc(100% - 42px);
+    --arrow-clip-path: 100%;
+    margin-right: 0;
+    margin-left: auto;
+    grid-column: 1 / 2;
+  }
+}

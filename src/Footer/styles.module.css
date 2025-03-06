@@ -1,0 +1,104 @@
+.footer {
+  padding-block: 32px;
+  background-color: var(--foreground);
+  border-top: 2px solid var(--border-color);
+  position: relative;
+}
+
+.topRow {
+  padding-inline: 32px;
+  display: flex;
+  align-items: center;
+  container-type: inline-size;
+}
+
+.logoWrapper {
+  flex: 1;
+  img {
+    min-height: 40px;
+    max-height: 100px;
+    margin-inline: auto;
+  }
+
+  @container (max-width: 45rem) {
+    display: none;
+  }
+}
+
+.contentWrapper {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 16px;
+  > div {
+    flex: 1 1 375px;
+    > div {
+      justify-content: center;
+    }
+  }
+}
+
+.subFooter {
+  padding-top: 16px;
+  padding-inline: 16px;
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  column-gap: 32px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  span {
+    display: inline-flex;
+    gap: 8px;
+  }
+}
+
+.topButtonWrapper {
+  position: absolute;
+  top: 0;
+  right: 16%;
+  transform: translateY(-50%) scale(var(--button-size, 1));
+  transition: all 0.3s;
+  z-index: 50;
+  --clip-height: 50%;
+  &:hover {
+    transform: translateY(calc(-50% - 6px));
+    --clip-height: calc(50% + 5px);
+  }
+}
+
+.topButton {
+  position: relative;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  padding: 2px 8px 8px;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 6px solid var(--foreground);
+  color: var(--background);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+.topButton:hover {
+  background-color: var(--accent-light);
+}
+
+.topButton::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 64px;
+  height: 64px;
+  background-color: var(--border-color);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.3s;
+  clip-path: polygon(0 0, 100% 0, 100% var(--clip-height, 50%), 0 var(--clip-height, 50%));
+}
