@@ -60,6 +60,7 @@
   font-weight: bold;
   text-align: start;
 
+  font-family: sans-serif;
   --stroke-width: 2px;
 
   -webkit-text-stroke-color: var(--background);

@@ -42,7 +42,7 @@
   --arrow-clip-path: 0;
   margin-right: auto;
   margin-left: 0;
-  border: 2px solid var(--border-color-inactive);
+  border: 2px solid var(--border-color);
   background-color: var(--background);
   border-radius: var(--border-radius-1);
   width: 80%;
@@ -65,7 +65,7 @@
     left: var(--arrow-left);
     height: 28px;
     width: 28px;
-    background: var(--border-color-inactive);
+    background: var(--border-color);
     clip-path: polygon(0 0, var(--arrow-clip-path) 100%, 100% 0);
 
     &:after {
