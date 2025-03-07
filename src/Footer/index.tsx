@@ -6,7 +6,7 @@ import Button from '../components/Button';
 import Input from '../components/Input';
 import Socials from '../components/Socials';
 import { RoutePaths } from '../constants/routes';
-import { title } from '../constants/strings';
+import { PodcastLinks, PodcastTitle } from '../constants/strings';
 import useScrollOffset from '../hooks/useScrollOffset';
 import styles from './styles.module.css';
 import logo from '/logo.svg';
@@ -34,7 +34,7 @@ const Footer = () => {
       </div>
       <div className={styles.topRow}>
         <Link to={RoutePaths.HOME} className={styles.logoWrapper}>
-          <img src={logo} alt={title} />
+          <img src={logo} alt={PodcastTitle} />
         </Link>
         <div className={styles.contentWrapper}>
           <div>
@@ -51,7 +51,7 @@ const Footer = () => {
             </Input>
           </div>
           <div>
-            <Socials />
+            <Socials links={PodcastLinks} />
           </div>
         </div>
       </div>

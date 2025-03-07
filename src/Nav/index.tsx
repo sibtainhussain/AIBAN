@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, NavLink } from 'react-router';
 import Button from '../components/Button';
 import { RoutePaths } from '../constants/routes';
-import { title } from '../constants/strings';
+import { PodcastTitle } from '../constants/strings';
 import useScrollOffset from '../hooks/useScrollOffset';
 import styles from './styles.module.css';
 import logo from '/logo.svg';
@@ -15,7 +15,7 @@ const Nav = () => {
     <header className={styles.header}>
       <nav className={`${styles.nav} ${stickied ? styles.sticky : ''}`}>
         <Link to={RoutePaths.HOME} className={styles.logoWrapper}>
-          <img src={logo} alt={title} />
+          <img src={logo} alt={PodcastTitle} />
         </Link>
         <span className={styles.linksMenu}>
           <Button icon>

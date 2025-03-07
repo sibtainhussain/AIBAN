@@ -14,7 +14,7 @@ import Button from '../Button';
 import Tooltip from '../Tooltip';
 import classes from './styles.module.css';
 
-enum Brand {
+export enum Brand {
   TWITTER = 'Twitter',
   INSTAGRAM = 'Instagram',
   FACEBOOK = 'Facebook',
@@ -22,7 +22,7 @@ enum Brand {
   YOUTUBE = 'Youtube',
   TIKTOK = 'TikTok',
   SPOTIFY = 'Spotify',
-  PODCAST = 'Apple Podcast',
+  Podcast = 'Apple Podcast',
 }
 
 const SocialIcons: Record<Brand, IconDefinition> = {
@@ -33,27 +33,21 @@ const SocialIcons: Record<Brand, IconDefinition> = {
   [Brand.YOUTUBE]: faYoutube,
   [Brand.TIKTOK]: faTiktok,
   [Brand.SPOTIFY]: faSpotify,
-  [Brand.PODCAST]: faPodcast,
+  [Brand.Podcast]: faPodcast,
 };
 
-const PodcastLinks: Partial<Record<Brand, string>> = {
-  [Brand.TWITTER]: '',
-  [Brand.INSTAGRAM]: '',
-  [Brand.FACEBOOK]: '',
-  // [Brand.LINKEDIN]: '',
-  [Brand.YOUTUBE]: '',
-  [Brand.TIKTOK]: '',
-  [Brand.SPOTIFY]: '',
-  [Brand.PODCAST]: '',
-};
+export type TSocialLinks = Partial<Record<Brand, string>>;
+interface IProps extends HTMLAttributes<HTMLDivElement> {
+  links: TSocialLinks;
+}
 
-const Socials = (props: HTMLAttributes<HTMLDivElement>) => {
+const Socials = ({ links, ...props }: IProps) => {
   return (
     <div className={classes.row} {...props}>
-      {Object.entries(PodcastLinks).map(([brand, link]) => (
+      {Object.entries(links).map(([brand, link]) => (
         <Tooltip key={brand} id={brand} content={brand}>
           <Button icon Component="a" href={link}>
-            {/* @ts-expect-error */}
+            {/* @ts-expect-error - brand is a key of SocialIcons */}
             <FontAwesomeIcon icon={SocialIcons[brand]} size="lg" fixedWidth />
           </Button>
         </Tooltip>
