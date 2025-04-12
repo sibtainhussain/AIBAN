@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import Button from '../components/Button';
 import { RoutePaths } from '../constants/routes';
-import { PodcastDescription } from '../constants/strings';
+import { PodcastDescription, PodcastTagline } from '../constants/strings';
 import classes from './styles.module.css';
 
 const AboutSection = () => {
@@ -9,7 +9,7 @@ const AboutSection = () => {
     <section className={classes.row} id="About Section">
       <div className={classes.aboutSection}>
         <div className={classes.glowBackground} />
-        <h2>The Podcast about something or the other</h2>
+        <h2>{PodcastTagline}</h2>
         <br />
         <p>{PodcastDescription}</p>
       </div>

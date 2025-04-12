@@ -17,3 +17,28 @@
 .description {
   max-width: 80ch;
 }
+
+.hostRow {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+.hostPicture {
+  flex: 0 1 400px;
+  img {
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+  }
+}
+.hostProfile {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  p {
+    margin-top: 16px;
+  }
+}

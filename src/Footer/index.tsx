@@ -1,6 +1,6 @@
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Link } from 'react-router';
 import Button from '../components/Button';
 import Input from '../components/Input';
@@ -14,7 +14,8 @@ import logo from '/logo.svg';
 const Footer = () => {
   const scrolled = useScrollOffset(300);
   const [email, setEmail] = useState('');
-  // const isValid = useMemo(() => validateEmail(email || ''), [email]);
+
+  const onSubscribe = useCallback(() => {}, []);
 
   return (
     <footer className={styles.footer}>
@@ -47,7 +48,9 @@ const Footer = () => {
               placeholder="Email"
               centerLabel
             >
-              <Button style={{ flex: 1 }}>Subscribe</Button>
+              <Button style={{ flex: 1 }} onClick={onSubscribe}>
+                Subscribe
+              </Button>
             </Input>
           </div>
           <div>

@@ -2,7 +2,7 @@ import { Brand, TSocialLinks } from '../components/Socials';
 
 export const PodcastTitle = 'Age Is But a Number';
 
-export const PodcastTagline = 'The Podcast About Something Or Another';
+export const PodcastTagline = 'One line description of the podcast';
 
 export const PodcastDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium facilisis
 molestie. Quisque ac ligula lorem. Pellentesque commodo dolor sed posuere vehicula.
@@ -15,10 +15,9 @@ lacus. Aliquam suscipit feugiat cursus. Nam faucibus massa rutrum metus lacinia 
 vitae eu est.`;
 
 export const PodcastLinks: TSocialLinks = {
-  [Brand.TWITTER]: '',
+  [Brand.TWITTER]: 'https://x.com/podcast_url',
   [Brand.INSTAGRAM]: '',
   [Brand.FACEBOOK]: '',
-  // [Brand.LINKEDIN]: '',
   [Brand.YOUTUBE]: '',
   [Brand.TIKTOK]: '',
   [Brand.SPOTIFY]: '',
